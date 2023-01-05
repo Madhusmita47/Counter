@@ -4,7 +4,7 @@ import {useState} from "react"
 
 
 export default function App() {
-  const[state,setState]=useState()
+  const[state,setState]=useState(0)
   const handleInc=()=>{
     setState(parseInt(state)+1)
   }
@@ -16,13 +16,19 @@ export default function App() {
   }
   return (
     <>
+    <div className="outer">
+    <h2 className="cnt">Counter</h2>
     <div>
-      <input type="number" onChange={handleChange} value={state}/>
+      
+    <input className="input" type="number" onChange={handleChange} value={state}/>
     </div>
-    <div>
-      <button onClick={handleInc} >increment</button>
-      <button onClick={handleDec} disabled={parseInt(state)<=0}> decrement</button>
+    <div >
+      <button className="btn"  onClick={handleInc} >increment</button>
+      &nbsp;    &nbsp;
+      <button className="btn"  onClick={handleDec} disabled={parseInt(state)<=0}> decrement</button>
       </div>
+      </div>
+     
     </>
   );
 }
